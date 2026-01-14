@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 16px;
+    color: #222;
+}
+
+header h1 {
+    margin: 0 0 12px 0;
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list li {
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 6px;
+    background: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+}
+
+.columns {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.col {
+    flex: 1;
+}
+
+#currentCoach {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.roster-player {
+    font-size: 0.95em;
+}
+
+.brother {
+    color: #b03;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+button {
+    padding: 6px 10px;
+}
+
+.controls {
+    margin-top: 12px;
+}
+
+/* Players table: ensure readable minimum font and a multi-column layout so all players fit without vertical scrolling */
+.players-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.players-table thead th {
+    text-align: left;
+    padding: 6px 8px;
+    font-weight: 700;
+}
+
+.players-table td {
+    vertical-align: top;
+    padding: 6px 8px;
+    border: 0;
+}
+
+.player-name {
+    font-size: 18pt;
+    line-height: 1.1;
+    display: inline-block;
+    min-width: 0;
+}
+
+/* buttons inside table */
+.players-table button {
+    padding: 4px 8px;
+    margin-left: 8px;
+    font-size: 12px;
+}
+
+/* reduce margins in the players column so table can fit on one screen more easily */
+.col:first-child {
+    padding-right: 8px;
+}
+
+/* Players table: ensure readable minimum font and fixed 4-column layout */
+.players-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.players-table thead th,
+.players-table td {
+    width: 25%;
+    padding: 6px 8px;
+    vertical-align: top;
+}
+
+.players-table thead th {
+    text-align: left;
+    font-weight: 700;
+}
+
+.player-name {
+    font-size: 18pt;
+    line-height: 1.1;
+    display: inline-block;
+    min-width: 0;
+}
+
+/* buttons inside table */
+.players-table button {
+    padding: 4px 8px;
+    margin-left: 8px;
+    font-size: 12px;
+}
+
+/* Teams grid shown after draft ends: each team in its own column */
+.teams-grid {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.team-column {
+    flex: 1 1 0;
+    min-width: 180px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    background: #fff;
+}
+
+.team-column h4 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+}
+
+.team-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.team-column li {
+    padding: 6px 4px;
+    font-size: 18pt;
+    border-bottom: 1px solid #f0f0f0;
+}
