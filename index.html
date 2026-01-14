@@ -1,0 +1,91 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DraftSite</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>DraftSite — Little League Draft</h1>
+    </header>
+
+    <section id="setup">
+        <h2>Setup</h2>
+        <div class="row">
+            <div>
+                <label>Players CSV (name,brother_group)</label><br />
+                <input id="playersFile" type="file" accept=".csv" />
+            </div>
+            <div>
+                <label>Coaches CSV (name)</label><br />
+                <input id="coachesFile" type="file" accept=".csv" />
+            </div>
+        </div>
+        <div>
+            <button id="loadSamples">Load sample data</button>
+            <button id="startBtn">Start Draft</button>
+            <!-- Export button (disabled until draft ends) -->
+            <button id="exportBtn" disabled>Export Rosters (CSV)</button>
+        </div>
+
+        <h3>Pick Order (drag to reorder)</h3>
+        <ul id="pickOrder" class="list"></ul>
+
+        <!-- Draft order mode selector -->
+        <div style="margin-top:12px;">
+            <label><strong>Draft Order:</strong></label><br />
+            <label><input type="radio" name="draftMode" id="draftModeLinear" value="linear" checked> Linear</label>
+            <label style="margin-left:12px;"><input type="radio" name="draftMode" id="draftModeSnake" value="snake">
+                Snake (serpentine)</label>
+            <div style="font-size:0.9em;color:#555;margin-top:6px;">Snake order example (4 coaches):
+                1,2,3,4,4,3,2,1,1,2,...</div>
+        </div>
+    </section>
+
+    <section id="draft" style="display:none;">
+        <div class="columns">
+            <div class="col">
+                <h3>Available Players</h3>
+                <!-- replaced list with a responsive multi-column table -->
+                <table id="playersTable" class="players-table" aria-label="Available players">
+                    <thead>
+                        <tr id="playersHeaderRow"><!-- header cells filled by JS --></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="col">
+                <h3>Current Turn</h3>
+                <div id="currentTurn">
+                    <div id="currentCoach"></div>
+                    <div>
+                        <button id="passBtn">Pass</button>
+                        <div id="status"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h3>Coach Rosters</h3>
+                <div id="rosters"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="prevBtn">Previous Turn</button>
+            <button id="endBtn">End Draft</button>
+        </div>
+    </section>
+
+    <!-- Teams view displayed after draft ends (each team in its own column) -->
+    <section id="teams" style="display:none;">
+        <h2>Teams</h2>
+        <div id="teamsContainer" class="teams-grid"></div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
